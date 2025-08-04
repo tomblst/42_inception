@@ -1,0 +1,7 @@
+[mysqld]
+datadir = /var/lib/mysql #repertoire ou Mariadb stock les donnees
+socket  = /run/mysqld/mysqld.sock # Définit l’emplacement du fichier socket utilisé pour les connexions locales Unix
+bind_address=0.0.0.0
+#Maria ecouter sur toutes les interfaces reseaux -> accesible par d'autre conteneurs
+port = 3306 # Port d'ecoute
+user = mysql # system user
