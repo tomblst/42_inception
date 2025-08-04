@@ -5,31 +5,6 @@ The goal is to build a fully functional **multi-container Docker environment** u
 
 ---
 
-## 🧱 Project Structure
-
-inception/
-├── Makefile
-├── srcs/
-│ ├── docker-compose.yml
-│ └── requirements/
-│ ├── mariadb/
-│ │ ├── conf/
-│ │ │ ├── init.sh
-│ │ │ └── server_conf.cnf
-│ │ └── Dockerfile
-│ ├── nginx/
-│ │ ├── conf/
-│ │ │ └── nginx.conf
-│ │ └── Dockerfile
-│ └── wordpress/
-│ ├── conf/
-│ │ ├── auto_config.sh
-│ │ └── www.conf
-│ └── Dockerfile
-
-
----
-
 ## 🚀 Overview
 
 This infrastructure includes the following Dockerized services:
@@ -59,7 +34,7 @@ All services are built from custom **Dockerfiles** and connected via **Docker ne
 
 ### 🔧 1. Configuration
 
-Create environment variables inside the `.env` file or directly in `docker-compose.yml` if needed (DB name, user, passwords, domain, etc.).
+Create environment variables inside the `.env` file in /srcs (DB name, user, passwords, domain, etc.).
 
 ### ▶️ 2. Build and Run
 
@@ -68,7 +43,7 @@ make        # Equivalent to docker-compose up --build -d
 ```
 ### 🛑 3. Stop and Clean
 
-make clean   # Equivalent to docker-compose down -v
+make fclean
 
 ## 🔐 Security Highlights
 
@@ -88,7 +63,7 @@ https://localhost/
 
 You can customize the hostname by editing your /etc/hosts file or configuring DNS (e.g., 127.0.0.1 yourdomain.com)
 
-🧪 Testing
+## 🧪 Testing
 
     ✅ WordPress should be accessible and operational with your configured user
 
